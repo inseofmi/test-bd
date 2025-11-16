@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Тестирование по дисциплине "Базы данных"</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+
+    <header class="header">
+      <h1>Тестирование по дисциплине "Базы данных"</h1>
+      <p class="subtitle">20 вопросов • 4 варианта • 15 минут • порядок рандомизируется</p>
+    </header>
+
+    <!-- Экран старта -->
+    <section id="start" class="card">
+      <h2>Готовы начать тест?</h2>
+      <p>У вас есть <strong>15 минут</strong> на выполнение 20 вопросов.</p>
+
+      <div class="start-info">
+        <p>📝 Вопросы по базам данных и HTML</p>
+        <p>⏱ Таймер начнётся после нажатия "Начать"</p>
+
+        <div class="grading-info">
+          <h4>Критерии оценивания:</h4>
+          <p>✅ <strong>18-20 правильных</strong> — Отлично (5)</p>
+          <p>✅ <strong>15-17 правильных</strong> — Хорошо (4)</p>
+          <p>✅ <strong>11-14 правильных</strong> — Удовлетворительно (3)</p>
+          <p>❌ <strong>0-10 правильных</strong> — Неудовлетворительно (2)</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="start-btn" class="btn primary">Начать тест</button>
+      </div>
+    </section>
+
+    <!-- Таймер -->
+    <div id="timer" class="timer hidden">
+      <span id="timer-text">15:00</span>
+    </div>
+
+    <!-- Основной тест -->
+    <section id="quiz" class="card hidden">
+      <div id="progress" class="progress">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div id="question-area" class="question-area">
+        <div id="question-number" class="q-number"></div>
+        <h2 id="question-text" class="q-text"></h2>
+        <div id="options" class="options"></div>
+      </div>
+
+      <div class="controls">
+        <button id="prev-btn" class="btn ghost" aria-label="Назад">← Назад</button>
+        <button id="next-btn" class="btn primary" aria-label="Далее">Далее →</button>
+        <button id="finish-btn" class="btn success hidden" aria-label="Завершить">Завершить</button>
+      </div>
+    </section>
+
+    <!-- Результаты -->
+    <section id="result" class="card hidden">
+      <h2>Результат тестирования</h2>
+
+      <div id="score-card" class="score-card">
+        <div id="score-text" class="score-text"></div>
+        <div id="grade-text" class="grade-text"></div>
+      </div>
+
+      <div class="grading-scale">
+        <h4>Шкала оценивания:</h4>
+        <div class="scale-items">
+          <div class="scale-item excellent">18-20 = Отлично (5)</div>
+          <div class="scale-item good">15-17 = Хорошо (4)</div>
+          <div class="scale-item satisfactory">11-14 = Удовлетворительно (3)</div>
+          <div class="scale-item unsatisfactory">0-10 = Неудовлетворительно (2)</div>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button id="show-answers-btn" class="btn ghost">Показать правильные ответы</button>
+        <button id="retry-btn" class="btn primary">Пройти заново</button>
+      </div>
+
+      <div id="detailed" class="detailed hidden"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Ответы хранятся в виде SHA-256 хешей — не видно явных правильных вариантов</small>
+    </footer>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
